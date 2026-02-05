@@ -1,13 +1,36 @@
-//TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
-// click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
-void main() {
-  //TIP Press <shortcut actionId="ShowIntentionActions"/> with your caret at the highlighted text
-  // to see how IntelliJ IDEA suggests fixing it.
-  IO.println(String.format("Hello and welcome!"));
+public class Main {
+    public static void main(String[] args) {
+        // Criar uma nova conta bancária
+        ContaBancaria minhaConta = new ContaBancaria("Gustavo", "4361-7", "Corrente");
 
-  for (int i = 1; i <= 5; i++) {
-    //TIP Press <shortcut actionId="Debug"/> to start debugging your code. We have set one <icon src="AllIcons.Debugger.Db_set_breakpoint"/> breakpoint
-    // for you, but you can always add more by pressing <shortcut actionId="ToggleLineBreakpoint"/>.
-    IO.println("i = " + i);
-  }
+        // Exibir informações da conta
+        minhaConta.exibirInformacoes();
+
+        // Depositar dinheiro
+        minhaConta.depositar(500.0);
+
+        // Consultar saldo
+        minhaConta.consultarSaldo();
+
+        // Sacar dinheiro
+        minhaConta.sacar(200.0);
+
+        // Consultar saldo novamente
+        minhaConta.consultarSaldo();
+
+        // Desativar a conta
+        minhaConta.desativarConta();
+
+        // Tentar sacar dinheiro de uma conta inativa
+        minhaConta.sacar(100.0);
+
+        // Ativar a conta novamente
+        minhaConta.ativarConta();
+
+        // Sacar dinheiro após reativar a conta
+        minhaConta.sacar(100.0);
+
+        // Consultar saldo final
+        minhaConta.consultarSaldo();
+    }
 }
